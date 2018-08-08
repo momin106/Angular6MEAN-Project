@@ -1,0 +1,27 @@
+{
+  "name": "blogapplication",
+  "version": "1.0.0",
+  "description": "Blog Posting Application",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "MEAN",
+    "Stack",
+    "Angular",
+    "6",
+    "Application"
+  ],
+  "author": "Momin Shahzad",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "jsonwebtoken": "^8.2.2",
+    "mongoose": "^5.1.4",
+    "nodemailer": "^4.6.5"
+  }
+}
