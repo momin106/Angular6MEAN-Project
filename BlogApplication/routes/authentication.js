@@ -67,8 +67,8 @@ module.exports = (router) => {
                   port: 587, //587
                   secure: false, // true for 465, false for other ports
                   auth: {
-                    user: "mominskybird@gmail.com", // your own gmail eg abc@gmail.com
-                    pass: "hbsouskdndsrqxsr"  // Enter secret gmail password not gmail login password
+                    user: "", // your own gmail eg abc@gmail.com
+                    pass: ""  // Enter secret gmail password not gmail login password
                   }
                 });
                 const email = {
@@ -205,8 +205,8 @@ module.exports = (router) => {
             port: 587, //587
             secure: false, // true for 465, false for other ports
             auth: {
-              user: "mominskybird@gmail.com", // eg john@gmail.com
-              pass: "hbsouskdndsrqxsr"  // eg password asdjdfshfjkas
+              user: "", // eg john@gmail.com
+              pass: ""  // eg password asdjdfshfjkas
             }
           });
           const email = {
@@ -256,8 +256,8 @@ module.exports = (router) => {
                 port: 587, //587
                 secure: false, // true for 465, false for other ports
                 auth: {
-                  user: "mominskybird@gmail.com", // eg john@gmail.com
-                  pass: "hbsouskdndsrqxsr"  // eg password jkfakfdhajfha
+                  user: "", // eg john@gmail.com
+                  pass: ""  // eg password jkfakfdhajfha
                 }
               });
               const email = {
@@ -332,8 +332,8 @@ module.exports = (router) => {
                 port: 587, //587
                 secure: false, // true for 465, false for other ports
                 auth: {
-                  user: "mominskybird@gmail.com", // eg john@gmail.com
-                  pass: "hbsouskdndsrqxsr"  // eg password jhsdajlkfhasj
+                  user: "", // eg john@gmail.com
+                  pass: ""  // eg password jhsdajlkfhasj
                 }
               });
               // Create e-mail object to send to user
@@ -393,8 +393,8 @@ module.exports = (router) => {
                   port: 587, //587
                   secure: false, // true for 465, false for other ports
                   auth: {
-                    user: "mominskybird@gmail.com", // eg john@gmail.com
-                    pass: "hbsouskdndsrqxsr"  // hjdkalsfajs
+                    user: "", // eg john@gmail.com
+                    pass: ""  // hjdkalsfajs
                   }
                 });
                 const email = {
@@ -445,8 +445,8 @@ module.exports = (router) => {
                 port: 587, //587
                 secure: false, // true for 465, false for other ports
                 auth: {
-                  user: "mominskybird@gmail.com",
-                  pass: "hbsouskdndsrqxsr"
+                  user: "",
+                  pass: ""
                 }
               });
               // If user successfully saved to database, create e-mail object
@@ -508,33 +508,6 @@ module.exports = (router) => {
       else {
         res.json({ success: true, permission: user.permission});
       }
-        // if (err) {
-        //     // Create an e-mail object that contains the error. Set to automatically send it to myself for troubleshooting.
-        //     var email = {
-        //         from: 'MEAN Stack Staff, cruiserweights@zoho.com',
-        //         to: 'gugui3z24@gmail.com',
-        //         subject: 'Error Logged',
-        //         text: 'The following error has been reported in the MEAN Stack Application: ' + err,
-        //         html: 'The following error has been reported in the MEAN Stack Application:<br><br>' + err
-        //     };
-        //     // Function to send e-mail to myself
-        //     client.sendMail(email, function(err, info) {
-        //         if (err) {
-        //             console.log(err); // If error with sending e-mail, log to console/terminal
-        //         } else {
-        //             console.log(info); // Log success message to console if sent
-        //             console.log(user.email); // Display e-mail that it was sent to
-        //         }
-        //     });
-        //     res.json({ success: false, message: 'Something went wrong. This error has been logged and will be addressed by our staff. We apologize for this inconvenience!' });
-        // } else {
-            // Check if username was found in database
-            // if (!user) {
-            //     res.json({ success: false, message: 'No user was found' }); // Return an error
-            // } else {
-            //     res.json({ success: true, permission: user.permission }); // Return the user's permission
-            // }
-     //   }
     });
 });
   /* ===============================================================
@@ -625,36 +598,6 @@ module.exports = (router) => {
 
   });
 
-  /*
-    User.find({}, (err, users) => {
-
-      if (err) {
-        res.json({ success: false, message: err });
-      } else {
-        // req.decoded.username
-        User.findOne({ _id: req.decoded.userId }, (err, mainUser) => {
-
-          // Check if logged in user was found in database
-          if (!mainUser) {
-            res.json({ success: false, message: 'No user found' }); // Return error
-          } else {
-            // Check if user has editing/deleting privileges 
-            if (mainUser.permission === 'admin' || mainUser.permission === 'moderator') {
-              // Check if users were retrieved from database
-              if (!users) {
-                res.json({ success: false, message: 'Users not found' }); // Return error
-              } else {
-                res.json({ success: true, users: users, permission: mainUser.permission }); // Return users, along with current user's permission
-              }
-            } else {
-              res.json({ success: false, message: 'Insufficient Permissions' }); // Return access error
-            }
-          }
-        });
-      }
-    }).sort({ '_id': -1 });
-  });
-*/
 
   /* ===============================================
       Route to get single user for delete page
